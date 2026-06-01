@@ -12,7 +12,11 @@ myEmitter.on("greet", () => {
     console.log("Hello from Event");
 
 });
+myEmitter.on("login", (username, timestamp) => {
+    console.log(`User ${username} logged in at ${timestamp}`);
+});
 // emitting the event ->
 console.log("Raising the event");
 myEmitter.emit("greet");
+myEmitter.emit("login", "Amit" , new Date().toLocaleString());
 console.log("Event Emitted");
